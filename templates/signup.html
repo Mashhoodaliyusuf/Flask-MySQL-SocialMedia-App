@@ -1,0 +1,83 @@
+<html>
+
+<head>
+<title>Signup System</title>
+<style>
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+  #headerwrap{width:100%;height:65px;background-color:black;}
+  #header{width:1100px;margin:auto;height:50px;}
+#main{width:1200px;height:600px;margin:50px auto;background-color:#f0f2f5;}
+#mainleft{width:550px;height:500px;margin-top:40px;float:left;}
+#mainright{width:390px;height:440px;margin-top:40px;float:right;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;background-color:white;border-radius:4px;}
+#form{width:93%;height:auto;margin:3px auto;padding-bottom:20px;}
+#input{width:100%;height:35px;padding:20px;margin-bottom:20px;font-size:18px;border:1px solid green;border-radius:3px;}
+#submit{width:120px;padding:8px;font-size:18px;font-weight:bold;color:white;background-color:tomato;border:none;}
+</style>
+</head>
+
+
+
+<body style="background-color:#f0f2f5;">
+
+
+<!--header starts-->
+<div id="headerwrap">
+<div id="header">
+    	<a href="https://shmpl.co.in/social" style="line-height:65px;"><img src="{{url_for('static', filename='system/pychat.png')}}" style="width:200px;"></a>
+</div>
+</div>
+<!--header ends-->
+
+<!--main starts-->
+
+<div id="main">
+    
+<!-- mainleft starts-->    
+<div id="mainleft"><i><b style="font-weight:bold;font-size:55px;color:#356A97;">Py</b><b style="font-weight:bold;font-size:55px;color:#F4C93E;">Chat</b></i><br><br>
+<p style="font-size:26px;font-family:arial;">A social world for python lovers</p><br>
+<img src="https://websensa.com/wp-content/uploads/2020/06/Python_najpopularniejszy-1-1024x1024.png" style="width:70%;float:right;">
+
+</div>
+<!-- mainleft ends-->  
+
+<div id="mainright"><p align="center" style="font-size:30px;font-weight:bold;"><br><b>Create an account</b></p>
+<p align="center" style="font-size:19px;font-weight:bold;">It's safe and easy</p><br>
+
+<form id="form" method="post" action="/social/add">
+<input type="name" name="user_name" id="input" placeholder="your name"><br>    
+<input type="email" name="user_email" id="input" placeholder="your email"><br>
+<input type="password" name="user_password" id="input" placeholder="password"><br>
+<p align="center"><input type="submit" name="submit" value="login" id="submit"></p><br>
+<p align="center"><a href="/social" style="text-decoration:none;color:green;font-size:16px;">Already have an account? Login</a></p>
+</form>
+
+</div>
+</div>
+
+<!--main ends-->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,358 @@
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PyChat Home</title>
+  <meta name="description" content="">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/f1031c9ab1.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  html, body, div{margin:0;padding:0;border:0;}
+  a{text-decoration:none;color:black;}
+  a:hover{text-decoration:none;color:black;}
+  #headerwrap{width:100%;height:65px;background-color:black;}
+  #header{width:1100px;margin:auto;height:50px;}
+  #main{width:1100px;display:table;margin:40px auto;}
+  #leftbar{float:left;width:250px;height:600px;}
+ #profileimg{width:150px;height:150px;border-radius:150px;border:4px solid white;margin:20px auto;}
+  #profilename{width:220px;height:auto;color:#595959;font-family:helvetica;border:0px solid white;margin:auto;}
+ #sidemenu{}
+  #sidemenu li{list-style:none;margin-top:25px;}
+  #sidemenu li a{font-size:20px;font-family:Arial;display:block;margin-top:15px;text-decoration:none;color:#404040;padding:4px;}
+    #sidemenu li a:hover{background-color:#e0e4eb;}
+  #rightbar{float:left;width:570px;height:auto;margin-left:12px;}
+  #headpostsec{width:540px;display:table;margin:auto;margin-bottom:25px;}
+.postsec{width:540px;height:auto;background-color:white;margin:12px auto;border-radius:4px;padding-top:10px;padding-bottom:15px;background-color:white;border:1px solid #e6e6e6;}
+.posttitle2{width:100%;height:45px;padding:10px;font-size:19px;margin-bottom:25px;font-family:Arial;border-bottom:1px solid green;border-top:0;border-left:0; border-right:0;}
+  #form{width:96%;display:table;margin:10px auto;}
+   #input{width:100%;height:50px;padding:15px;font-size:24px;font-family:arial;margin-bottom:10px;border:none;}
+  #textarea{max-width:100%;min-width:100%;resize:none;min-height:100px;padding:12px;margin-top:5px;font-size:20px;font-family:arial;border:none;}
+   #submit{color:white;float:right;background-color:red;padding:7px;width:90px;border:none;border-radius:5px;}
+    #textarea::-webkit-scrollbar{width: 10px;}
+ #textarea::-webkit-scrollbar-thumb{box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);background-color:tomato;}
+    #textarea:focus {
+        outline: none;
+		background-color:#f2f2f2;
+      }
+#input:focus{outline:none;background-color:#f2f2f2;}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height:100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 500px;
+  display:table;
+  padding-bottom:10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  }
+  
+ .modal2-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 400px;
+  display:table;
+  padding-bottom:30px;
+  border-bottom-right-radius:45px;
+  border-top-left-radius:45px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s                            
+}
+.modal3-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 500px;
+  display:table;
+  padding-bottom:10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s                            
+}
+
+
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  background-color:tomato;
+ 
+}
+.modal2-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  background-color:tomato;
+  border-top-left-radius:45px;
+}
+
+
+
+.modal-body {padding: 2px 16px;}
+#arrowmob{float:left;font-weight:bold;font-size:20px;color:black;line-height:50px;margin-left:10px;}
+#arrowmob2{float:left;font-weight:bold;font-size:20px;color:black;line-height:50px;margin-left:20px;}
+#arrowmob3{float:left;font-weight:bold;font-size:20px;color:black;line-height:40px;margin-left:5px;}
+#submitfontmob{margin-top:5px;font-size:20px;line-height:50px;font-weight:bold;}
+#subheadmob{width:100%;height:50px;background-color:#d3d9de;margin-top:-5px;}
+#subheadmob2{width:100%;height:50px;background-color:#d3d9de;margin-top:-5px;border-top-left-radius:45px;}
+#deletefont{font-size:22px;font-weight:bold;margin-top:-20px;margin-bottom:-20px;}
+#file-input{display:none;}
+
+
+</style>
+
+<script src="https://kit.fontawesome.com/f1031c9ab1.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body style="background-color:#eff2f5;">
+
+<div id="headerwrap">
+    <div id="header">
+	<a href="https://shmpl.co.in/social" style="line-height:65px;"><img src="{{url_for('static', filename='system/pychat.png')}}" style="width:200px;"></a>
+	</div> 
+</div>
+
+<!-- main starts -->
+<div id="main">
+      <!-- left bar starts -->
+     <div id="leftbar">
+	   <div id="profileimg"><img src="{{url_for('static', filename=user_img)}}" style="width:100%;height:100%;border-radius:100%;"></div>
+	   
+	  <div id="profilename"><b style="margin:10px;font-size:22px;font-family:Arial;">{{user_name}}</b></div><br><br>
+	   <ul id="sidemenu">
+		   <li>
+		      <a href="/social"><i style="font-size:24px;" class="fa-solid fa-house-user"></i><span style="margin-left:10px;">Home</span></a></li>
+			  <li><a href="/social/myposts"><i style="font-size:24px;" class="fa-brands fa-usps"></i><span style="margin-left:10px;">My posts</span></a></li>
+			  <li><a href="#" id="editDiv"><i style="font-size:24px;" class="fa-sharp fa-solid fa-address-card"></i><span style="margin-left:10px;">Edit profile</span></a></li>
+			 <li> <a href="/social/logout"><i style="font-size:24px;" class="fa-solid fa-right-from-bracket"></i><span style="margin-left:10px;">Logout</span></a>
+		   </li>
+	   </ul>
+	 
+	 </div>
+     <!-- left bar ends -->
+	 
+	 
+	 
+	<!-- right bar starts -->
+    
+	  <div id="rightbar">
+	
+	
+		 
+		 
+		 
+	 
+		 <!-- posts starts -->
+		 <div class="postsec">
+			       <div style="width:100%;height:50px;">
+			               <div style="width:50px;height:50px;border-radius:50px;float:left;margin-left:10px;background-color:grey;">
+			                <img src="{{url_for('static', filename=post[0][5])}}" style="width:100%;height:100%;border-radius:100%;">
+			               </div>
+			               <div style="width:460px;float:left;margin-left:10px;height:50px;margin-top:5px;">
+			                   <div style="width:100%;height:25px;"><b style="line-height:25px;font-size:17px;">{{post[0][4]}}</b><a href="#" id="deletepost" style="float:right;line-height:25px;font-weight:bold;font-size:16px;color:red;">Delete</a>
+			                   </div>
+				               <div style="width:100%;height:15px;"><a style="font-size:13px;">{{post[0][3]}}</a>
+				               </div>
+				           </div>
+				     </div>       
+				          
+			         
+			 <form id="form" action="/social/update_post/{{post[0][0]}}" method="post">
+						<input type="text" name="edit_title" value="{{post[0][1]}}" id="input"/> <br>
+						<textarea name="edit_desc" id="textarea">{{post[0][2]}}</textarea>  <br>
+						<input type="submit" id="submit" value="update"/>
+			 </form>
+
+		 </div>
+		 
+		  <!-- posts ends -->
+	
+	
+	
+	   </div>
+	
+     <!-- right bar ends -->
+	 
+	 
+	 
+	 
+	 
+</div>
+
+<!-- main ends-->
+
+
+
+<!-- The Modal  delete post-->
+<div id="myModal3" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal3-content">
+    <div class="modal-header">
+      
+      <h3 style="font-size:22px;">Delete post</h3>
+    </div>
+	<div id="subheadmob"><p id="submitfontmob" align="center">Delete post</p></div>
+    <div class="modal-body">
+
+     <br><br><p align="center" id="deletefont">Are you sure you want to delete this post?</p><br><br>
+	 <p align="right">
+	 <button class="cancelbutton" id="close3">Cancel</button>
+	 <a href="/social/deletepost/{{post[0][0]}}"><button class="deletebutton">Delete</button></a>
+	  </p>
+    </div>
+  
+  </div>
+
+</div>
+
+
+
+<!-- The Modal  UPDATE PROFILE-->
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal2-content">
+    
+	<div id="subheadmob2">
+	    <i id="arrowmob2" class="fas fa-long-arrow-left"></i><p id="submitfontmob" align="center">Update profile</p>
+	</div> <br><br><br>
+    <div class="modal-body">
+	
+<form class="form" method="post" action="/social/upduser" enctype="multipart/form-data">
+<div style="width:100px;height:100px;border-radius:100px;background-color:gray;margin:10px auto;">
+    
+    <label for="file-input">
+<img id="previewimage"  src="{{url_for('static', filename=user_img)}}" style="width:100px;height:100px;border-radius:100px;"/>
+</label>
+<input name="imgfile" id="file-input" type="file" onchange="document.getElementById('previewimage').src = window.URL.createObjectURL(this.files[0])"  accept="image/*" /><br>    
+</div>
+<input type="text" name="edit_name" class="posttitle2" required="required" value="{{user_name}}"><br>
+<input type="text" name="edit_email" class="posttitle2" required="required" value="{{user_email}}"><br>
+<input type="text" name="edit_pass" class="posttitle2" required="required" value="{{user_pass}}"><br>
+<input type="submit" name="submit" class="submit2" value="update profile">
+</form>
+	  
+    </div>
+  
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+var btn3 = document.getElementById("deletepost")
+var modal3 =  document.getElementById("myModal3");
+var modal2 =  document.getElementById("myModal2");
+var btn2 = document.getElementById("editDiv")
+
+
+
+var spanmob2 = document.getElementById("arrowmob2");
+
+var spanmob3 = document.getElementById("close3");
+
+
+btn2.onclick = function() {
+  modal2.style.display = "block";
+}
+
+btn3.onclick = function() {
+  modal3.style.display = "block";
+}
+
+
+// When the user clicks on <span> (x), close the modal
+spanmob2.onclick = function() {
+  modal2.style.display = "none";
+}
+spanmob3.onclick = function() {
+  modal3.style.display = "none";
+}
+
+
+
+</script>
+</body>
+</html>

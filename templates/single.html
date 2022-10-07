@@ -1,0 +1,125 @@
+<html>
+
+<head>
+<title>PyChat Home</title>
+<style>
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+#headerwrapper{width:100%;height:70px;background-color:tomato;}
+#header{width:1200px;height:70px;margin:auto;}
+#main{width:1200px;display:table;margin:50px auto;background-color:#f2f2f2;}
+#mainleft{width:250px;height:500px;margin-top:25px;float:left;background-color:red;}
+#proimage{width:160px;height:160px;border-radius:160px;margin:20px auto;border:2.5px solid white;}
+#mainright{width:650px;height:700px;margin-top:25px;float:left;margin-left:20px;background-color:green;border-radius:4px;}
+#postsec{width:100%;height:60px;background-color:pink;margin-bottom:30px;}
+#form{width:93%;height:auto;margin:3px auto;padding-bottom:20px;}
+#input{width:100%;height:35px;padding:20px;margin-bottom:20px;font-size:18px;border:1px solid green;border-radius:5px;}
+#submit{width:120px;padding:8px;font-size:18px;font-weight:bold;color:white;background-color:tomato;border:none;}
+</style>
+</head>
+
+
+
+<body style="background-color:#f2f2f2;">
+
+
+<!--header starts-->
+<div id="headerwrapper">
+<div id="header"><a>PyChat</a></div>
+</div>
+<!--header ends-->
+
+<!--main starts-->
+<div id="main">
+    
+<!-- mainleft starts-->    
+<div id="mainleft">
+
+<div id="proimage"><img src="{{url_for('static', filename=user_img)}}" style="width:100%;height:100%;">  </div>
+
+<b style="margin:30px;font-size:25px;font-family:Helvetica;">{{user_name}}</b><br><br><br>
+
+<a style="margin:30px;color:black;text-decoration:none;font-size:18px;font-family:Helvetica;" href="">Home</a><br><br>
+<a style="margin:30px;color:black;text-decoration:none;font-size:18px;font-family:Helvetica;" href="/social/myposts">My Posts</a><br><br>
+<a style="margin:30px;color:black;text-decoration:none;font-size:18px;font-family:Helvetica;" href="">Edit</a><br><br>
+<a style="margin:30px;color:black;text-decoration:none;font-size:18px;font-family:Helvetica;" href="/social/logout">Logout</a><br>
+
+
+</div>
+<!-- mainleft ends-->  
+
+
+<!--main right starts-->
+<div id="mainright">
+    <div id="postsec">
+    <form method="post" action="/social/post">
+       <input type="text" name="title">
+       <input type="text" name="desc">
+       <input type="submit" name="submit">
+    </form>
+    </div>
+    
+    
+    <div style="width:95%;height:auto;margin:10px auto;background-color:white;border:1px solid;">
+        <div style="width:60px;height:60px;float:left;border-radius:60px;margin:20px;border:1px solid;"><img src="{{url_for('static', filename=post[0][5])}}" style="width:100%;height:100%;border-radius:100%;"><br></div>
+        <div style="width:100px;height:20px;border:1px solid;float:right;">{{post[0][4]}}</div>
+        <div style="width:95%;margin:10px auto;height:120px;border:1px solid green;"></div>
+        <p>{{post[0][1]}}</p>
+        <a>{{post[0][2]}}</a>
+        
+    </div>
+   
+    {% for k in comm %}
+     <div style="width:500px;margin:auto;height:100px;background-color:yellow;">
+       <div style="width:50px;height:50px;border-radius:50px;"><img src="{{url_for('static', filename=k[4])}}" style="width:100%;height:100%;border-radius:100%;"></div> 
+       <a>{{k[1]}}</a>
+       <a>{{k[3]}}</a>
+    </div>
+    {% endfor %}
+     
+    
+    
+    
+    
+    <div style="width:500px;height:300px;margin-top:100px;background-color:purple;">
+        <form method="post" action="/social/entercomment/{{post[0][0]}}">
+            <textarea name="comment"></textarea>
+            <input type="submit" name="submit">
+        </form>
+        
+    </div>
+    
+    
+    
+</div>
+<!--main right ends-->
+
+
+
+</div>
+<!--main ends-->
+
+
+
+</body>
+
+</html>
